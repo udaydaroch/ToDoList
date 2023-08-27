@@ -2,29 +2,29 @@
 <html>
 <link rel="stylesheet" href="LandingPage.css"></style>
 <body class = "mainbackground">
-  <h1 >To do list</h1>
-  <div class="tableContent"><!-- class give the table a proper structure in the landingPage.css file-->
-    <div  id="input">  <!-- input field that will will give a proper structure and style in the landingPage.css file  -->
-      <input type ="text" id ="taskName" placeHolder="Enter Task"><!--just a simple text field that will require text as input but will print a warning when a number is inputted-->
-      <input type ="time" id ="startTime" placeHolder="Start Time"><!-- ""(same as above) but for removing tasks-->
-      <input type ="time" id ="endTime" placeHolder="End Time"><!-- ""(same as above) but for removing tasks-->
-      <button onclick="gettaskField()">     add task       </button><!--this button will add tasks and will be disabled when their is no input in the textfield-->
-      <div class="select">
-        <select name="todo" class="simple-filter">
-          <option value="all">View all</option>
-          <option value ="completed">Completed tasks</option>
-          <option value ="completed">incomplete tasks</option>
-        </select>
-      </div>
+  <h1 align="center">To do list</h1>
+  <div align="center" id="input">  <!-- input field that will will give a proper structure and style in the landingPage.css file  -->
+    <input type ="text" id ="taskName" placeHolder="Enter Task"><!--just a simple text field that will require text as input but will print a warning when a number is inputted-->
+    <input type ="time" id ="startTime" placeHolder="Start Time"><!-- ""(same as above) but for removing tasks-->
+    <input type ="time" id ="endTime" placeHolder="End Time"><!-- ""(same as above) but for removing tasks-->
+    <button onclick="gettaskField()">     add task       </button><!--this button will add tasks and will be disabled when their is no input in the textfield-->
+    <div class="select">
+      <select name="todo" class="simple-filter">
+        <option value="all">View all</option>
+        <option value ="completed">Completed tasks</option>
+        <option value ="completed">incomplete tasks</option>
+      </select>
     </div>
+  </div>
+  <div align="center"class="tableContent"><!-- class give the table a proper structure in the landingPage.css file-->
     <table class="table-style"id="table"> <!--intializing table with an id to formate the layout of the table in the css file-->
       <thead >
       <div>
       <tr>
         <!--introducing headers for the table-->
-        <th align="left">Task</th>
-        <th align="left">TimeSlot</th>
-        <th align="left">delete task</th>
+        <th id ="task-adj" class="task-cell">Task</th>
+        <th id="Timeslot-adj">TimeSlot</th>
+        
       </tr>
     </div>
     </thead>

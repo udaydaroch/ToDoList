@@ -1,35 +1,28 @@
 .table-style {
   border-collapse: collapse;
-  text-align: "center";
+  text-align: left;
   margin: 10px 0;
-  margin-left: 2%;
   table-layout: fixed;
-  font-size: 0.9m;
+  font-size: 1em;
   font-family: sans-serif;
-  width: 70%;
+  width: 600px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
-/* Add this to your existing CSS or in a <style> tag */
-.table-style-font {
-  font-family: Arial, sans-serif;
-  color: black;
-  font-size: 14px;
-
-}
-
-
 
 .table-style div{
   column-count: 0;
   column-gap:100px;
   column-rule-width:30px;
 }
+.table-style td.task-cell {
+  padding-left:20px; 
+  padding-right:50px;
+}
+
 .table-style th{
-  position: sticky;
+  
     background-color:rgb(116, 194, 195);
     padding: 10px 15px;
-    margin-left: 20px;
-    margin-right: 20px;
     color:black;
 }
 .table-style td{
@@ -38,5 +31,13 @@
     color:black;
 }
 
-
-
+.table-style th#Timeslot-adj {
+  background-color: rgb(116, 194, 195);
+  padding: 10px 30px;
+  color: black;
+  text-align: left; /* Add this line to align the header text to the left */
+  padding-right: 30px; /* Adjust this value to control the spacing */
+}
+.table-style th#task-adj{
+  padding-right: 20px;
+}
