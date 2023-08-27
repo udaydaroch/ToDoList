@@ -5,18 +5,9 @@
   <h1 >To do list</h1>
   <div class="tableContent"><!-- class give the table a proper structure in the landingPage.css file-->
     <div  id="input">  <!-- input field that will will give a proper structure and style in the landingPage.css file  -->
-      <button>     add task       </button><!--this button will add tasks and will be disabled when their is no input in the textfield-->
-      <input type ="text" id ="task" placeHolder="Enter Task"><!--just a simple text field that will require text as input but will print a warning when a number is inputted-->
-      <input type ="text" id ="task" placeHolder="Start Time"><!-- ""(same as above) but for removing tasks-->
-      <select name="AmToPm" class="am-or-pm">
-        <option value ="am">am</option>
-        <option value ="pm">pm</option>
-      </select>
-      <input type ="text" id ="task" placeHolder="End Time"><!-- ""(same as above) but for removing tasks-->
-      <select name="AmToPm" class="am-or-pm">
-        <option value2 ="am2">am</option>
-        <option value2 ="pm2">pm</option>
-      </select>
+      <input type ="text" id ="taskName" placeHolder="Enter Task"><!--just a simple text field that will require text as input but will print a warning when a number is inputted-->
+      <input type ="time" id ="startTime" placeHolder="Start Time"><!-- ""(same as above) but for removing tasks-->
+      <input type ="time" id ="endTime" placeHolder="End Time"><!-- ""(same as above) but for removing tasks-->
     </div>
       <div class="select">
         <select name="todo" class="simple-filter">
@@ -25,15 +16,16 @@
           <option value ="completed">incomplete tasks</option>
         </select>
       </div>
-    <table id="firstRow"> <!--intializing table with an id to formate the layout of the table in the css file-->
+    <table id="table"> <!--intializing table with an id to formate the layout of the table in the css file-->
       <tr>
         <!--introducing headers for the table-->
         <th>Task</th>
         <th>TimeSlot</th>
       </tr>
     </table>
+    <button onclick="gettaskField()">     add task       </button><!--this button will add tasks and will be disabled when their is no input in the textfield-->
   </div>
   <!--referencing to the js file that will control all the button click events as well as inputs given to the text fields-->
-  <script scr ="LandingPage.js"></script>
+  <script src="LandingPage.js"></script>
 </body>
 </html>
