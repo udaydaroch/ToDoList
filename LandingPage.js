@@ -16,11 +16,13 @@ function gettaskField() {
     taskrow.classList.add("table-fond", "task-cell");
 
     const removetask = document.createElement("button");
+    removetask.classList.add("RemoveButton-css");
     const checktask = document.createElement("button"); // Fixed typo here
+    checktask.classList.add("checkTaskButton-css");
     removetask.textContent = "Remove";
     checktask.textContent = "task complete"; // Added semicolon
 
-    DurationRow.innerHTML = startTime.value + " to " + endTime.value +" ";
+    DurationRow.innerHTML = startTime.value + " to " + endTime.value;
     DurationRow.appendChild(removetask);
     DurationRow.appendChild(checktask);
 
