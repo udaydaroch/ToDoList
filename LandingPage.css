@@ -1,0 +1,42 @@
+.table-style {
+  border-collapse: collapse;
+  text-align: "center";
+  margin: 10px 0;
+  margin-left: 2%;
+  table-layout: fixed;
+  font-size: 0.9m;
+  font-family: sans-serif;
+  width: 70%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+/* Add this to your existing CSS or in a <style> tag */
+.table-style-font {
+  font-family: Arial, sans-serif;
+  color: black;
+  font-size: 14px;
+
+}
+
+
+
+.table-style div{
+  column-count: 0;
+  column-gap:100px;
+  column-rule-width:30px;
+}
+.table-style th{
+  position: sticky;
+    background-color:rgb(116, 194, 195);
+    padding: 10px 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color:black;
+}
+.table-style td{
+    background-color:rgb(255, 255, 255);
+    padding: 12px 15px;
+    color:black;
+}
+
+
+

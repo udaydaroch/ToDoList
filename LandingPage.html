@@ -16,12 +16,17 @@
           <option value ="completed">incomplete tasks</option>
         </select>
       </div>
-    <table id="table"> <!--intializing table with an id to formate the layout of the table in the css file-->
+    <table class="table-style"id="table"> <!--intializing table with an id to formate the layout of the table in the css file-->
+      <thead >
+      <div>
       <tr>
         <!--introducing headers for the table-->
-        <th>Task</th>
-        <th>TimeSlot</th>
+        <th align="left">Task</th>
+        <th align="left">TimeSlot</th>
+        <th align="left">delete task</th>
       </tr>
+    </div>
+    </thead>
     </table>
     <button onclick="gettaskField()">     add task       </button><!--this button will add tasks and will be disabled when their is no input in the textfield-->
   </div>
