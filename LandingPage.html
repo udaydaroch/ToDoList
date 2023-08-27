@@ -8,7 +8,7 @@
       <input type ="text" id ="taskName" placeHolder="Enter Task"><!--just a simple text field that will require text as input but will print a warning when a number is inputted-->
       <input type ="time" id ="startTime" placeHolder="Start Time"><!-- ""(same as above) but for removing tasks-->
       <input type ="time" id ="endTime" placeHolder="End Time"><!-- ""(same as above) but for removing tasks-->
-    </div>
+      <button onclick="gettaskField()">     add task       </button><!--this button will add tasks and will be disabled when their is no input in the textfield-->
       <div class="select">
         <select name="todo" class="simple-filter">
           <option value="all">View all</option>
@@ -16,6 +16,7 @@
           <option value ="completed">incomplete tasks</option>
         </select>
       </div>
+    </div>
     <table class="table-style"id="table"> <!--intializing table with an id to formate the layout of the table in the css file-->
       <thead >
       <div>
@@ -28,7 +29,6 @@
     </div>
     </thead>
     </table>
-    <button onclick="gettaskField()">     add task       </button><!--this button will add tasks and will be disabled when their is no input in the textfield-->
   </div>
   <!--referencing to the js file that will control all the button click events as well as inputs given to the text fields-->
   <script src="LandingPage.js"></script>
