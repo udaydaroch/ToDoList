@@ -47,9 +47,14 @@
   background-color: rgb(224, 182, 182);
   margin: 2px;
 }
-
+.RemoveButton-css:hover{
+  background-color: rgb(244, 229, 229);
+}
 .checkTaskButton-css{
   border-radius: 20px;
   padding-left: 6px;
-  background-color: rgb(184, 239, 185);
+  background-color: rgb(136, 215, 137);
+}
+.checkTaskButton-css:hover {
+  background-color: rgb(200, 231, 201);
 }
