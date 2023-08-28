@@ -2,9 +2,8 @@ const taskInputField = document.getElementById("taskName");
 const startTime = document.getElementById("startTime");
 const endTime = document.getElementById("endTime");
 const allTable = document.getElementById("table");
-const completedTaskTable= document.getElementById("table");
-const incompleteTaskTable = document.getElementById("table");
 const selectedElement = document.querySelector(".simple-filter");
+const userInfo = [];
 
 selectedElement.addEventListener('change', function() {
   const selectedValue = selectedElement.value;
@@ -12,19 +11,27 @@ selectedElement.addEventListener('change', function() {
 });
 
 function toggleTable(selectedValue) {
-  const tableOptions = ['table', 'incompletetasktable', 'completeTaskTable'];
-  tableOptions.forEach(tableOption => {
-    const table = document.getElementById(tableOption);
-    if (tableOption === selectedValue) {
-      table.style.display = 'table';
-    } else {
-      table.style.display = 'none';
+  
+  console.log(`Selected value: ${selectedValue}`);
+  console.log("array",userInfo);
+  for (let i = 0; i < allTable.rows.length; i++) {
+    const taskRow = allTable.rows[i];
+    const isHeaderRow = i === 0;
+    const isCompleted = userInfo[i - 1] && userInfo[i- 1][2];
+    console.log(isCompleted);
+    if (!isHeaderRow) {
+      if (
+        (selectedValue === "completeTaskTable" && isCompleted === true) ||
+        (selectedValue === "incompletetaskTable" && isCompleted === false) ||
+        selectedValue == "table"
+      ) {
+        taskRow.style.display = "table-row";
+      } else {
+        taskRow.style.display = "none";
+      }
     }
-  });
+  }
 }
-
-
-
 function gettaskField() {
   if (startTime.value >= endTime.value) {
     alert("invalid start and end time");
@@ -32,7 +39,7 @@ function gettaskField() {
     const newRow = allTable.insertRow();
     const taskrow = newRow.insertCell(0);
     const DurationRow = newRow.insertCell(1);
-
+    userInfo.push([taskInputField.value, startTime.value + " to " + endTime.value,false]);
     taskrow.innerHTML = " " + taskInputField.value;
     taskrow.classList.add("table-fond", "task-cell");
 
@@ -45,26 +52,29 @@ function gettaskField() {
     checktask.classList.add("checkTaskButton-css");
     removetask.textContent = "Remove";
     checktask.textContent = "task complete"; // Added semicolon
-
     DurationRow.innerHTML = startTime.value + " to " + endTime.value;
+    checktask.addEventListener("click", function()
+    {
+      console.log("Check task button clicked");
+      addToCompleted(taskrow.innerHTML);
+    });
     DurationRow.appendChild(removetask);
     DurationRow.appendChild(checktask);
     DurationRow.classList.add("table-fond");
-    checktask.classList.addEventListener("click", addTocompleted(checktask,taskrow.innerHTML,DurationRow.innerHTML));
-  
+    console.log("array",userInfo);
   }
 }
-function addTocompleted(event,button,task,duration)
-{
-  const clickedButton = event.target;
-  if (clickedButton = button); 
-  {
-  const newRow = completedTaskTable.insertRow();
-  const taskrow = newRow.insertCell(0);
-  const DurationRow = newRow.insertCell(1);
-  taskrow.innerHTML = task;
-  DurationRow.innerHTML = duration;
+function addToCompleted(taskrowContent) {
+  for (let i = 0; i < allTable.rows.length; i++) {
+    const taskRow = allTable.rows[i];
+    const isHeaderRow = i === 0;
+    const taskText = " "+taskRow.cells[0].textContent.trim();
+    console.log(taskText);
+    console.log(taskrowContent);
+    if (!isHeaderRow && taskText === taskrowContent) {
+      userInfo[i - 1][2] = true;
+    }
   }
+  console.log('array',userInfo);
 }
-
 
