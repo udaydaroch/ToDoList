@@ -17,12 +17,12 @@ function toggleTable(selectedValue) {
   for (let i = 0; i < allTable.rows.length; i++) {
     const taskRow = allTable.rows[i];
     const isHeaderRow = i === 0;
-    const isCompleted = userInfo[i - 1] && userInfo[i- 1][2];
+    const isCompleted = userInfo[i - 1] && userInfo[i- 1][3];
     console.log(isCompleted);
     if (!isHeaderRow) {
       if (
-        (selectedValue === "completeTaskTable" && isCompleted === true) ||
-        (selectedValue === "incompletetaskTable" && isCompleted === false) ||
+        (selectedValue == "completeTaskTable" && isCompleted === true) ||
+        (selectedValue == "incompletetaskTable" && isCompleted === false) ||
         selectedValue == "table"
       ) {
         taskRow.style.display = "table-row";
@@ -36,10 +36,11 @@ function gettaskField() {
   if (startTime.value >= endTime.value) {
     alert("invalid start and end time");
   } else {
+    
     const newRow = allTable.insertRow();
     const taskrow = newRow.insertCell(0);
     const DurationRow = newRow.insertCell(1);
-    userInfo.push([taskInputField.value, startTime.value + " to " + endTime.value,false]);
+    userInfo.push([taskInputField.value, startTime.value,endTime.value,false]);
     taskrow.innerHTML = " " + taskInputField.value;
     taskrow.classList.add("table-fond", "task-cell");
 
@@ -47,6 +48,7 @@ function gettaskField() {
     removetask.classList.add("RemoveButton-css");
     removetask.addEventListener("click", function() {
       allTable.deleteRow(newRow.rowIndex);
+      userInfo.splice(newRow.rowIndex - 1, 1);
     });
     const checktask = document.createElement("button"); // Fixed typo here
     checktask.classList.add("checkTaskButton-css");
@@ -62,19 +64,23 @@ function gettaskField() {
     DurationRow.appendChild(checktask);
     DurationRow.classList.add("table-fond");
     console.log("array",userInfo);
-  }
+  } 
+
 }
 function addToCompleted(taskrowContent) {
   for (let i = 0; i < allTable.rows.length; i++) {
     const taskRow = allTable.rows[i];
     const isHeaderRow = i === 0;
     const taskText = " "+taskRow.cells[0].textContent.trim();
+    taskRow.cells[1].text
     console.log(taskText);
     console.log(taskrowContent);
     if (!isHeaderRow && taskText === taskrowContent) {
-      userInfo[i - 1][2] = true;
+      userInfo[i - 1][3] = true;
+      break;
     }
   }
   console.log('array',userInfo);
 }
+
 

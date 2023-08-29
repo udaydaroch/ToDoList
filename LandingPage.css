@@ -1,3 +1,41 @@
+body{
+  background-color:#ccc;
+}
+.title {
+  font-family:'Courier New', monospace;
+}
+#input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#taskName,
+#startTime,
+#endTime,
+button,
+.simple-filter {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 .table-style {
   border-collapse: collapse;
   text-align: left;
@@ -5,7 +43,7 @@
   table-layout: fixed;
   font-size: 1em;
   font-family: sans-serif;
-  width: 600px;
+  width: 675px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -33,28 +71,28 @@
 
 .table-style th#Timeslot-adj {
   background-color: rgb(116, 194, 195);
-  padding: 10px 30px;
+  padding: 10px 50px;
   color: black;
   text-align: left; /* Add this line to align the header text to the left */
-  padding-right: 30px; /* Adjust this value to control the spacing */
+  padding-right: 40px; /* Adjust this value to control the spacing */
 }
 .table-style th#task-adj{
   padding-right: 20px;
 }
 .RemoveButton-css{
   border-radius: 20px;
-  padding-right: 4px;
-  background-color: rgb(224, 182, 182);
+  padding-right: 5px;
+  background-color: rgb(194, 106, 106);
   margin: 2px;
 }
 .RemoveButton-css:hover{
-  background-color: rgb(244, 229, 229);
+  background-color: rgb(212, 155, 155);
 }
 .checkTaskButton-css{
   border-radius: 20px;
   padding-left: 6px;
-  background-color: rgb(136, 215, 137);
+  background-color: rgb(95, 202, 96);
 }
 .checkTaskButton-css:hover {
-  background-color: rgb(200, 231, 201);
+  background-color: rgb(134, 191, 135);
 }
